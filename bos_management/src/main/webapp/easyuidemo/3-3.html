@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>layoutDemo</title>
+		<script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+		<script type="text/javascript" src="../js/easyui/jquery.easyui.min.js" ></script>
+		<script type="text/javascript" src="../js/easyui/locale/easyui-lang-zh_CN.js"></script>
+		<link rel="stylesheet" href="../js/easyui/themes/default/easyui.css" />
+		<link rel="stylesheet" href="../js/easyui/themes/icon.css"/>
+		<script>
+			//页面加载后执行
+			$(function(){
+				//绑定点击事件
+				$("#hh").click(function(){
+					//选择选项卡id 调用add方法和属性
+					$("#mytabs").tabs('add',{
+						title:"蛤蟆功",
+						content:"hhhhh",
+						closable:"true"
+					})
+				})
+			})
+			
+		</script>
+	</head>
+	<!--body添加layout的class属性 代表布局 下面的子div使用data-options中的region添加方位 title属性添加名称
+		style添加宽高
+	-->
+	<body class="easyui-layout">
+		<div data-options="region:'north',title:'北丐洪七公'" style="height: 100px;">北区</div>
+		<div data-options="region:'south',title:'南帝段正淳'" style="height: 100px;">南区</div>
+		<div data-options="region:'west',title:'西毒欧阳锋'" style="width: 180px;">
+			<!--div使用easyUI-aaccordion的class属性添加下拉菜单 data-options中使用fit:true属性填满下拉
+			子div使用data-options的title属性添加名称 -->
+			<div class="easyui-accordion" data-options="fit:'true'">
+				<div data-options="title:'能力菜单'">
+					<a id="hh" href="javascript:void(0)">蛤蟆功</a>
+				</div>
+				<div data-options="title:'物品菜单'"></div>
+			</div>
+		</div>
+		<div data-options="region:'east',title:'东邪黄药师'" style="width: 120px;">东区</div>
+		<!--使用div中的class添加easyUI-tabs属性 添加选项卡 子div的data-options的title属性添加名称-->
+		<div id="mytabs" class="easyui-tabs" data-options="region:'center'">
+			<!--使用data-options添加closable:true的属性打开关闭标签-->
+				<div data-options="title:'选项卡面板一',closable:'true'"></div>
+				<div data-options="title:'选项卡面板二'"></div>
+		</div>
+	</body>
+</html>

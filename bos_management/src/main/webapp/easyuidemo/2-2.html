@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>layoutDemo</title>
+		<script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+		<script type="text/javascript" src="../js/easyui/jquery.easyui.min.js" ></script>
+		<script type="text/javascript" src="../js/easyui/locale/easyui-lang-zh_CN.js"></script>
+		<link rel="stylesheet" href="../js/easyui/themes/default/easyui.css" />
+		<link rel="stylesheet" href="../js/easyui/themes/icon.css"/>
+	</head>
+	<!--body添加layout的class属性 代表布局 下面的子div使用data-options中的region添加方位 title属性添加名称
+		style添加宽高
+	-->
+	<body class="easyui-layout">
+		<div data-options="region:'north',title:'北丐洪七公'" style="height: 100px;">北区</div>
+		<div data-options="region:'south',title:'南帝段正淳'" style="height: 100px;">南区</div>
+		<div data-options="region:'west',title:'西毒欧阳锋'" style="width: 180px;">
+			<!--div使用easyUI-aaccordion的class属性添加下拉菜单 data-options中使用fit:true属性填满下拉
+			子div使用data-options的title属性添加名称 -->
+			<div class="easyui-accordion" data-options="fit:'true'">
+				<div data-options="title:'能力菜单'"></div>
+				<div data-options="title:'物品菜单'"></div>
+			</div>
+		</div>
+		<div data-options="region:'east',title:'东邪黄药师'" style="width: 120px;">东区</div>
+		<div data-options="region:'center',title:'中神周伯通'">中区</div>
+	</body>
+</html>
